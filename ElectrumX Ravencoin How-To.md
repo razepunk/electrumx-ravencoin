@@ -42,11 +42,11 @@ While pretty much any Linux distribution should work, this guide uses Ubuntu 20.
 
 - For better maintenance during updates, you may want to set up a link to your raven binary directory, e.g.: 
 
-**ln –s /home/electrumx/raven-x.x.x.x /home/electrumx/raven**
+**ln -s /home/electrumx/raven-x.x.x.x /home/electrumx/raven**
 
 This way you can always access the binary files through ./raven/bin/... from your home directory. 
 
-- You can now start the raven node with **./raven/bin/ravend** . After some time you can check the state of the node using **./raven/bin/raven-cli getinfo** . Keep an eye on the “blocks” – these will remain at 0 until all headers are synced (can be half an hour depending on the system and connection) and it will ultimately reach the current block-height of the rvn chain. By this time, which is normal to take several hours, about 20 GB of data will have been downloaded into the working ./.raven directory. 
+- You can now start the raven node with **./raven/bin/ravend** . After some time you can check the state of the node using **./raven/bin/raven-cli -getinfo** . Keep an eye on the “blocks” – these will remain at 0 until all headers are synced (can be half an hour depending on the system and connection) and it will ultimately reach the current block-height of the rvn chain. By this time, which is normal to take several hours, about 20 GB of data will have been downloaded into the working ./.raven directory. 
 
 - At this point you could install some script or service into /etc/systemd/system to run the node automatically at server startup. This ensures a 24/7 operation in case of an unexpected server restart due to system update or maintenance. You could also install watch-dog scripts to restart the server in case of a crash, however, this is beyond the scope of this document. See [This medium article](https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6) for an example.
 
